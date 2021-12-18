@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SavedRecipeDetailsActivity"
+    android:background="#ffd0fb">
+
+    <TextView
+        android:id="@+id/s_recipe_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="4"
+        android:text="Title"
+        android:fontFamily="@font/lily_script_one"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/s_recipe_image"
+        android:layout_width="200dp"
+        android:layout_height="130dp"
+        app:layout_constraintEnd_toStartOf="@id/s_recipe_info"
+        app:layout_constraintStart_toStartOf="@id/s_recipe_title"
+        app:layout_constraintTop_toBottomOf="@id/s_recipe_title"
+        android:src="@drawable/ic_no_image"/>
+
+
+    <GridLayout
+        android:id="@+id/s_recipe_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#d968fe"
+        android:columnCount="1"
+        android:paddingLeft="15pt"
+        android:rowCount="5"
+        android:textAlignment="center"
+        android:useDefaultMargins="true"
+        app:layout_constraintEnd_toEndOf="@id/s_recipe_title"
+        app:layout_constraintStart_toEndOf="@id/s_recipe_image"
+        app:layout_constraintTop_toBottomOf="@id/s_recipe_title">
+        <TextView
+            android:id="@+id/s_is_gluten_free"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alegreya_bold"
+            android:text="Gluten Free:"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/s_is_vegetarian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alegreya_bold"
+            android:text="Vegetarian:"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/s_is_dairy_free"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alegreya_bold"
+            android:text="Dairy Free:"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/s_is_vegan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alegreya_bold"
+            android:text="Vegan:"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/s_preparation_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alegreya_bold"
+            android:text="Preparation time:"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/s_recipe_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/s_recipe_image"
+        app:layout_constraintStart_toStartOf="@id/s_recipe_image"
+        app:layout_constraintTop_toBottomOf="@+id/s_recipe_image">
+        <GridLayout
+            android:id="@+id/s_button_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:layout_marginLeft="45pt"
+            android:rowCount="1"
+            android:textAlignment="center"
+            android:useDefaultMargins="true">
+
+            <Button
+                android:id="@+id/download_recipe_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="downloadRecipe"
+                android:text="Download"
+                android:textSize="15sp" />
+
+
+            <ImageView
+                android:id="@+id/delete_recipe_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_red_dark"
+                android:layout_marginLeft="40pt"
+                android:onClick="deleteRecipe"
+                android:layout_marginTop="10dp"
+                android:src="@android:drawable/ic_menu_delete"
+                app:layout_constraintVertical_bias="0.0" />
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/s_ingredients_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Ingredients"
+            android:background="#d968fe"
+            android:fontFamily="@font/amita_bold"
+            android:textSize="22sp"
+            android:paddingHorizontal="130dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+            <TextView
+                android:id="@+id/s_ingredients_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:background="#ffddfe"
+                android:maxLines="10"
+                android:fontFamily="@font/alegreya"
+                android:text="Ingredients Contents"
+                android:gravity="left"
+                android:textSize="18sp"/>
+        </ScrollView>
+        <TextView
+            android:id="@+id/s_preparation_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Preparation"
+            android:background="#d968fe"
+            android:fontFamily="@font/amita_bold"
+            android:paddingHorizontal="130dp"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+            <TextView
+                android:id="@+id/s_preparation_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:fontFamily="@font/alegreya"
+                android:background="#ffddfe"
+                android:text="Preparation Contents"
+                android:gravity="left"
+                android:textSize="18sp"/>
+        </ScrollView>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
