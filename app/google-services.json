@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "125730565919",
+    "project_id": "randomrecipegenerator",
+    "storage_bucket": "randomrecipegenerator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125730565919:android:48f9a1ceddddca60e98a2a",
+        "android_client_info": {
+          "package_name": "com.example.randomrecipegenerator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "125730565919-ld7n1njo71s2cmh1tlqm03q288arevuk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmns9DaeOlcwtOW1PQx2vG2PgouHKXzEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "125730565919-ld7n1njo71s2cmh1tlqm03q288arevuk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
